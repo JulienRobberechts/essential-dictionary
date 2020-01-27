@@ -1,4 +1,4 @@
-# Mini dico
+# Essential dictionary
 
 The goal of this project is to provide a small search UI for the [MERRIAM-WEBSTER'S ELEMENTARY DICTIONARY WITH AUDIO](https://www.dictionaryapi.com/products/api-elementary-dictionary).
 
