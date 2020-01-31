@@ -19,7 +19,7 @@ const getDefinitions = word => {
 class SearchContainer extends Component {
   constructor() {
     super();
-    this.state = { definitions: [], searchText: "school" };
+    this.state = { definitions: [], searchText: "react" };
   }
 
   handleChange = e => {
@@ -89,8 +89,7 @@ const SearchSection = styled.div`
 const SearchBox = styled.input`
   font-size: 1.5rem;
   padding: 0.5rem;
-  background: #06e;
-  border: none;
+  border-color: #06e;
 `;
 
 const SearchButton = styled.input`
