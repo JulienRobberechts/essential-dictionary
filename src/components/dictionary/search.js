@@ -35,19 +35,16 @@ const renderResultSection = ({ word, dicoData }) => {
   if (dicoData.initialUi)
     return <InitialPanel />;
 
-  if (dicoData.error)
-    return <div>ERROR: {dicoData.errorMessage}</div>;
-
   if (!dicoData.definitions.length)
-    return <div>
+    return <>
       <NoResult word={word} />
       <Suggestions word={word} suggestions={dicoData.suggestions} />
-    </div>;
+    </>;
 
-  return <div>
+  return <>
     <Suggestions word={word} suggestions={dicoData.suggestions} />
     <Definitions word={word} definitions={dicoData.definitions} />
-  </div>;
+  </>;
 };
 
 const Header = styled.header`

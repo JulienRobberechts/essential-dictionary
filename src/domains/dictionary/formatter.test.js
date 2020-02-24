@@ -9,20 +9,20 @@ describe("Dictionary data formatter", () => {
     const dicoData = formatDefinitionData(data);
     expect(dicoData).toEqual({ definitions: data });
   })
-  it("should return an error for null data", () => {
+  it("should return empty fields for null data", () => {
     const data = null;
     const dicoData = formatDefinitionData(data);
-    expect(dicoData).toEqual({ error: true, errorMessage: 'no data', definitions: [] });
+    expect(dicoData).toEqual({ suggestions: [], definitions: [] });
   })
-  it("should return an error for non array data", () => {
+  it("should return empty fields for non array data", () => {
     const data = {};
     const dicoData = formatDefinitionData(data);
-    expect(dicoData).toEqual({ error: true, errorMessage: 'no data', definitions: [] });
+    expect(dicoData).toEqual({ suggestions: [], definitions: [] });
   })
-  it("should return an error for empty array data", () => {
+  it("should return empty fields for empty array data", () => {
     const data = [];
     const dicoData = formatDefinitionData(data);
-    expect(dicoData).toEqual({ error: true, errorMessage: 'no data', definitions: [] });
+    expect(dicoData).toEqual({ suggestions: [], definitions: [] });
   })
   it("should return suggestions for invalid data", () => {
     const data = ["suggestion1"];
