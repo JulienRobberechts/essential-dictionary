@@ -6,7 +6,7 @@ import { searchWordDefinition } from "../domains/dictionary";
 class SearchContainer extends Component {
   constructor() {
     super();
-    this.state = { dicoData: {}, searchText: "react" };
+    this.state = { dicoData: { initialUi: true }, searchText: "react" };
   }
 
   handleChange = e => {

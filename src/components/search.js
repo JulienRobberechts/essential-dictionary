@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Definitions from "./definitions";
+import Suggestions from "./suggestions";
 
 const Search = ({ searchText, dicoData, handleSubmit, handleChange }) => {
   return (
@@ -22,20 +23,30 @@ const Search = ({ searchText, dicoData, handleSubmit, handleChange }) => {
         </form>
       </SearchSection>
       <ResultSection>
-        {dicoData.error &&
-          <div>ERROR: {dicoData.errorMessage}</div>
-        }
-        {!dicoData.error && dicoData.suggestions &&
-          <div>suggestions: ...</div>
-        }
-        {!dicoData.error && dicoData.definitions &&
-          <Definitions word={searchText} definitions={dicoData.definitions} />
-        }
-
+        {renderResultSection({ word: searchText, dicoData })}
       </ResultSection>
     </div>
   );
 }
+
+const renderResultSection = ({ word, dicoData }) => {
+  if (dicoData.initialUi)
+    return <div>type a word in the search bar</div>;
+
+  if (dicoData.error)
+    return <div>ERROR: {dicoData.errorMessage}</div>;
+
+  if (!dicoData.definitions.length)
+    return <div>
+      <div>no result</div>
+      <Suggestions word={word} suggestions={dicoData.suggestions} />
+    </div>;
+
+  return <div>
+    <Suggestions word={word} suggestions={dicoData.suggestions} />
+    <Definitions word={word} definitions={dicoData.definitions} />
+  </div>;
+};
 
 const Header = styled.header`
   margin: 0 auto;
