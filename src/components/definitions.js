@@ -7,18 +7,20 @@ class Definitions extends Component {
     const { word, definitions } = this.props;
     return (
       <div>
-        <DefsHeader>
-          Definitions of <strong>'{word}'</strong> (
-          <span>
-            <a
-              className="word-link"
-              href={`https://en.wiktionary.org/wiki/${word}`}
-            >
-              Wikipedia
+        {definitions && definitions.length > 0 &&
+          <DefsHeader>
+            Definitions of <strong>'{word}'</strong> (
+            <span>
+              <a
+                className="word-link"
+                href={`https://en.wiktionary.org/wiki/${word}`}
+              >
+                Wikipedia
             </a>
-          </span>
-          )
+            </span>
+            )
         </DefsHeader>
+        }
 
         <div>
           {definitions && (
