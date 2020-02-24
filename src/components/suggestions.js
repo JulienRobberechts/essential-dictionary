@@ -6,15 +6,15 @@ const Suggestions = ({ word, suggestions }) => {
     <div>
 
       {suggestions && suggestions.length > 0 &&
-        <div>
-          <div>See also</div>
+        <>
+          <SeeAlso>See also</SeeAlso>
           {
             suggestions.map(suggestion =>
               <SuggestionItem>
-                {suggestion}
+                <a href={'?' + suggestion}>{suggestion}</a>
               </SuggestionItem>
             )}
-        </div>
+        </>
       }
     </div>
   );
@@ -22,6 +22,12 @@ const Suggestions = ({ word, suggestions }) => {
 
 const SuggestionItem = styled.div`
   margin-left: 0.5rem;
+`;
+
+const SeeAlso = styled.div`
+  font-style: italic;
+  margin-top: 0.5rem;
+  margin-bottom: 0.3rem;
 `;
 
 export default Suggestions;

@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 import Definitions from "./definitions";
 import Suggestions from "./suggestions";
+import InitialUi from "./initialUi";
+import NoResult from "./noResult";
 
 const Search = ({ searchText, dicoData, handleSubmit, handleChange }) => {
   return (
@@ -31,14 +33,14 @@ const Search = ({ searchText, dicoData, handleSubmit, handleChange }) => {
 
 const renderResultSection = ({ word, dicoData }) => {
   if (dicoData.initialUi)
-    return <div>type a word in the search bar</div>;
+    return <InitialUi />;
 
   if (dicoData.error)
     return <div>ERROR: {dicoData.errorMessage}</div>;
 
   if (!dicoData.definitions.length)
     return <div>
-      <div>no result</div>
+      <NoResult word={word} />
       <Suggestions word={word} suggestions={dicoData.suggestions} />
     </div>;
 
