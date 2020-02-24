@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import Definitions from "./definitions";
 
-const Search = ({ searchText, definitions, handleSubmit, handleChange }) => {
+const Search = ({ searchText, dicoData, handleSubmit, handleChange }) => {
   return (
     <div>
       <Header>
@@ -22,7 +22,16 @@ const Search = ({ searchText, definitions, handleSubmit, handleChange }) => {
         </form>
       </SearchSection>
       <ResultSection>
-        <Definitions word={searchText} definitions={definitions} />
+        {dicoData.error &&
+          <div>ERROR: {dicoData.errorMessage}</div>
+        }
+        {!dicoData.error && dicoData.suggestions &&
+          <div>suggestions: ...</div>
+        }
+        {!dicoData.error && dicoData.definitions &&
+          <Definitions word={searchText} definitions={dicoData.definitions} />
+        }
+
       </ResultSection>
     </div>
   );

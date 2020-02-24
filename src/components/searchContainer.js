@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
 import Search from "./search";
-import { getDefinitions } from "../adapters/dictionary";
+import { searchWordDefinition } from "../domains/dictionary";
 
 class SearchContainer extends Component {
   constructor() {
     super();
-    this.state = { definitions: [], searchText: "react" };
+    this.state = { dicoData: {}, searchText: "react" };
   }
 
   handleChange = e => {
@@ -18,9 +18,9 @@ class SearchContainer extends Component {
     e.preventDefault();
 
     if (this.state.searchText) {
-      getDefinitions(this.state.searchText).then(response => {
-        console.log("definitions", response.data);
-        this.setState({ definitions: response.data });
+      searchWordDefinition(this.state.searchText).then(dicoData => {
+        console.log("dicoData", dicoData);
+        this.setState({ dicoData: dicoData });
       });
     }
   };
@@ -31,7 +31,7 @@ class SearchContainer extends Component {
         searchText={this.state.searchText}
         handleSubmit={this.handleSubmit}
         handleChange={this.handleChange}
-        definitions={this.state.definitions}
+        dicoData={this.state.dicoData}
       />
     );
   }
