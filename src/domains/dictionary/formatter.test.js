@@ -12,21 +12,21 @@ describe("Dictionary data formatter", () => {
   it("should return an error for null data", () => {
     const data = null;
     const dicoData = formatDefinitionData(data);
-    expect(dicoData).toEqual({ error: true, errorMessage: 'no data' });
+    expect(dicoData).toEqual({ error: true, errorMessage: 'no data', definitions: [] });
   })
   it("should return an error for non array data", () => {
     const data = {};
     const dicoData = formatDefinitionData(data);
-    expect(dicoData).toEqual({ error: true, errorMessage: 'no data' });
+    expect(dicoData).toEqual({ error: true, errorMessage: 'no data', definitions: [] });
   })
   it("should return an error for empty array data", () => {
     const data = [];
     const dicoData = formatDefinitionData(data);
-    expect(dicoData).toEqual({ error: true, errorMessage: 'no data' });
+    expect(dicoData).toEqual({ error: true, errorMessage: 'no data', definitions: [] });
   })
   it("should return suggestions for invalid data", () => {
     const data = ["suggestion1"];
     const dicoData = formatDefinitionData(data);
-    expect(dicoData).toEqual({ suggestions: data });
+    expect(dicoData).toEqual({ suggestions: data, definitions: [] });
   })
 })
