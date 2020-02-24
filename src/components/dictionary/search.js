@@ -32,7 +32,7 @@ const Search = ({ searchText, dicoData, handleSubmit, handleChange }) => {
 }
 
 const renderResultSection = ({ word, dicoData }) => {
-  if (dicoData.initialUi)
+  if (dicoData.initialUi || !word || word.length === 0)
     return <InitialPanel />;
 
   if (!dicoData.definitions.length)
