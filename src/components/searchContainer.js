@@ -14,12 +14,10 @@ class SearchContainer extends Component {
   };
 
   handleSubmit = e => {
-    console.log("handleSubmit", e);
     e.preventDefault();
 
     if (this.state.searchText) {
       searchWordDefinition(this.state.searchText).then(dicoData => {
-        console.log("dicoData", dicoData);
         this.setState({ dicoData: dicoData });
       });
     }
