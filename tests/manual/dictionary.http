@@ -1,0 +1,22 @@
+
+# In VSCode use the REST Client pluggin
+# and add in your settings.json this content:
+# {
+#   "rest-client.environmentVariables": {
+#     "$shared": {
+#       "REACT_APP_MERRIAM_WEBSTER_API_KEY": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+#     }
+#   }
+# }
+
+### Call a valid word
+
+@word1=React
+
+https://www.dictionaryapi.com/api/v3/references/sd2/json/{{word1}}?key={{REACT_APP_MERRIAM_WEBSTER_API_KEY}}
+
+### Call an invalid word
+
+@word2=ReactJS
+
+https://www.dictionaryapi.com/api/v3/references/sd2/json/{{word2}}?key={{REACT_APP_MERRIAM_WEBSTER_API_KEY}}
