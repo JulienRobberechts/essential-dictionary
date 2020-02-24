@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import Definitions from "./definitions";
 import Suggestions from "./suggestions";
-import InitialUi from "./initialUi";
+import InitialPanel from "./InitialPanel";
 import NoResult from "./noResult";
 
 const Search = ({ searchText, dicoData, handleSubmit, handleChange }) => {
@@ -33,7 +33,7 @@ const Search = ({ searchText, dicoData, handleSubmit, handleChange }) => {
 
 const renderResultSection = ({ word, dicoData }) => {
   if (dicoData.initialUi)
-    return <InitialUi />;
+    return <InitialPanel />;
 
   if (dicoData.error)
     return <div>ERROR: {dicoData.errorMessage}</div>;

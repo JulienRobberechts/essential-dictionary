@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const InitialUi = () =>
+const InitialPanel = () =>
   <Panel>
     <Text>Type a word in the search bar</Text>
     <ImageContainer>
@@ -23,4 +23,4 @@ const ImageContainer = styled.div`
   margin: 2rem;
 `;
 
-export default InitialUi;
+export default InitialPanel;

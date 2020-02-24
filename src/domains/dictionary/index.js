@@ -1,4 +1,4 @@
-import { getDefinitions } from "../../adapters/dictionary";
+import { getDefinitions } from "./dictionary-api";
 import { formatDefinitionData } from "./formatter";
 
 const searchWordDefinition = async word =>
