@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-import SearchContainer from "./components/searchContainer";
+import { DictionarySearch } from "../dictionary";
 
 class App extends Component {
   render() {
-    return <SearchContainer />;
+    return <DictionarySearch />;
   }
 }
 

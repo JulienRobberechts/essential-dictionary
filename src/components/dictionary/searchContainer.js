@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
 import Search from "./search";
-import { searchWordDefinition } from "../domains/dictionary";
+import { searchWordDefinition } from "../../domains/dictionary";
 
 class SearchContainer extends Component {
   constructor() {
     super();
-    this.state = { dicoData: { initialUi: true }, searchText: "react" };
+    this.state = { dicoData: { initialUi: true }, searchText: "" };
   }
 
   handleChange = e => {

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import Definitions from "./definitions";
 import Suggestions from "./suggestions";
-import InitialPanel from "./InitialPanel";
+import InitialPanel from "./initialPanel";
 import NoResult from "./noResult";
 
 const Search = ({ searchText, dicoData, handleSubmit, handleChange }) => {
