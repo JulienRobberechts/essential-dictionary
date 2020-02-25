@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+import { breakpoints } from '../../assets'
 import Definitions from "./definitions";
 import Suggestions from "./suggestions";
 import InitialPanel from "./initialPanel";
@@ -15,13 +16,15 @@ const Search = ({ searchText, dicoData, handleSubmit, handleChange }) => {
       </Header>
       <SearchSection>
         <form onSubmit={handleSubmit}>
-          <SearchBox
-            type="text"
-            name="search"
-            value={searchText}
-            onChange={handleChange}
-          />
-          <SearchButton type="submit" value="OK" />
+          <SearchLayout>
+            <SearchBox
+              type="text"
+              name="search"
+              value={searchText}
+              onChange={handleChange}
+            />
+            <SearchButton type="submit" value="OK" />
+          </SearchLayout>
         </form>
       </SearchSection>
       <ResultSection>
@@ -67,6 +70,17 @@ const SearchSection = styled.div`
   justify-content: center;
 `;
 
+const SearchLayout = styled.div`
+  display: flex;
+  flex-direction: column;
+  * {
+    margin-bottom: 0.3rem;
+  }
+  @media (min-width: ${breakpoints.mobile}){
+    flex-direction: row;
+  }
+`;
+
 const SearchBox = styled.input`
   font-size: 1.5rem;
   padding: 0.5rem;
@@ -75,8 +89,6 @@ const SearchBox = styled.input`
 
 const SearchButton = styled.input`
   font-size: 1.5rem;
-  margin: 0 1rem;
-  background-color: gray;
   border: none;
   padding: 0.5rem;
   color: white;
@@ -85,6 +97,7 @@ const SearchButton = styled.input`
 
 const ResultSection = styled.div`
   margin: 1rem auto;
+  padding: 0 0.5rem;
   max-width: 30rem;
 `;
 
