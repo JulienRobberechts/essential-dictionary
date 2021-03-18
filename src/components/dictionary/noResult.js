@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export default ({ word }) =>
-  <Panel>
+const NoResult = ({ word }) =>( <Panel>
     <Text>Your search term '{word}' did not match any definitions.</Text>
   </Panel>
+);
+
+export default NoResult;
 
 const Panel = styled.div`
   display: flex;
