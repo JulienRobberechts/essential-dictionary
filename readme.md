@@ -1,3 +1,5 @@
+[![Node.js CI](https://github.com/JulienRobberechts/essential-dictionary/actions/workflows/nodejs.yml/badge.svg)](https://github.com/JulienRobberechts/essential-dictionary/actions/workflows/nodejs.yml)
+
 # Essential dictionary
 
 The goal of this project is to provide a small search UI for the [Merriam-Webster's elementary dictionary](https://www.dictionaryapi.com/products/api-elementary-dictionary).
